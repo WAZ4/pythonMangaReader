@@ -17,7 +17,7 @@
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <form class="col-12 mb-3 mb-lg-0 me-lg-3" role="search" method="get">
+                <form class="col-12 mb-3 mb-lg-0 me-lg-3" role="search" method="get" action="/">
                     <div class="input-group w-100">
                         <input type="text" class="form-control" name="searchText" placeholder="Manga title">
                         <button class="btn btn-outline-secondary" type="submit">Search</button>
@@ -67,14 +67,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {%for chapter in mangaFeed:%}
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <td>
+                                <a href="./{{mangaInfo['id']}}/chapter/{{chapter['id']}}">{{chapter["attributes"]["chapter"]}}{%if chapter["attributes"]["title"] != "" and chapter["attributes"]["title"] != none %} - {{chapter["attributes"]["title"]}}{%endif%}</a></td>
+                            <td>{{chapter["attributes"]["publishAt"]}}</td>
                         </tr>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                        </tr>
+                        {%endfor%}
                     </tbody>
                 </table>
             </div>
