@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Super Ultra Manga Reader</title>
+</head>
+
+<body>
+
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <form class="col-12 mb-3 mb-lg-0 me-lg-3" role="search" method="get">
+                    <div class="input-group w-100">
+                        <input type="text" class="form-control" name="searchText" placeholder="Manga title">
+                        <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <img src="{{mangaInfo['coverUrl']}}" alt="Thumbnail">
+            </div>
+            <div class="col-lg-8">
+                <div class="me-4 h-100" style="position:relative">
+
+                    <h1 class="border-1 border-bottom">{{mangaInfo["titleEn"]}}</h1>
+                    <!-- <h3>Domestic Girfriend</h3> -->
+                    <legend>Author: <span>{{mangaInfo["authorName"]}}</span></legend>
+                    {% if mangaInfo["lastChapter"] != "":%}
+                    <legend>Last Chapter: <span>{{mangaInfo["lastChapter"]}}</span></legend>
+                    {%endif%}
+                    <legend>Status: <span>{{mangaInfo["status"]}}</span></legend>
+                    <legend>Genres: <span>{%for genre in mangaInfo["genres"]:%}{{genre["attributes"]["name"]["en"]}}, {%endfor%}</span></legend>
+                    <legend>Themes: <span>{%for theme in mangaInfo["themes"]:%}{{theme["attributes"]["name"]["en"]}}, {%endfor%}</span></legend>
+                    {% if mangaInfo["malID"] != False: %}
+                    <a href="https://myanimelist.net/manga/{{mangaInfo['malID']}}">MyAnimeList</a> {%endif%}
+                    <div style="position:absolute; bottom:0;">
+                        <h6 class="mb-0">Description:</h6>
+                        <div class="border-top border-2">
+                            {{mangaInfo['description']}}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 justify-content-end me-4">
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Chapter</th>
+                            <th scope="col" class="w-25">Uploaded</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

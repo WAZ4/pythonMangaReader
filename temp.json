@@ -1,0 +1,34 @@
+[{
+    "id": "710f12bb-f127-4daa-93ba-9b301ad7c4ed",
+    "type": "author",
+    "attributes": {
+        "name": "Teshima Fuminori",
+        "imageUrl": null,
+        "biography": [],
+        "twitter": null,
+        "pixiv": null,
+        "melonBook": null,
+        "fanBox": null,
+        "booth": null,
+        "nicoVideo": null,
+        "skeb": null,
+        "fantia": null,
+        "tumblr": null,
+        "youtube": null,
+        "weibo": null,
+        "naver": null,
+        "website": null,
+        "createdAt": "2021-04-19T21:59:45+00:00",
+        "updatedAt": "2021-04-19T21:59:45+00:00",
+        "version": 1
+    },
+    "relationships": [{
+            "id": "30193c1f-1569-4c2d-8c29-8a365fec322b",
+            "type": "manga"
+        },
+        {
+            "id": "55ace2fb-e157-4d76-9e72-67c6bd762a39",
+            "type": "manga"
+        }
+    ]
+}]
